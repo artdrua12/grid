@@ -1,17 +1,19 @@
 <template>
   <div class="vpage grid">
     <div class="title grid">
-      <template v-if="showTitle">
-        <h1 v-for="i in 3" :key="i">{{i}}title</h1>
-        <v-slot></v-slot>
-      </template>
+      <h1>t</h1>
+      <h1>t</h1>
+      <slot v-if="showTitle" name="titleTop">
+        <h1>t</h1>
+      </slot>
+      <slot v-if="showTitle" name="titleCenter"></slot>
+      <slot v-if="showTitle" name="titlebottom"></slot>
       <button @click="showTitle=!showTitle">Show Title</button>
     </div>
 
     <div class="content grid">
       <h1 v-for="i in 1" :key="i">{{i}}contents</h1>
     </div>
-
   </div>
 </template>
 <script>
@@ -41,6 +43,7 @@ export default {
 
 button {
   width: 200px;
-  grid-area: 0/1/-1/2
+  align-self: flex-end;
+  justify-self: end;
 }
 </style>
