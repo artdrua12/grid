@@ -30,6 +30,7 @@ export default {
   background-color: rosybrown;
   position: sticky;
   top: 0px;
+  grid-gap: 5px;
 }
 .contents {
   background-color: navajowhite;

@@ -7,8 +7,8 @@
       <button class="button" @click="showTitle=!showTitle">Show Title</button>
     </div>
 
-    <div class="content" grid>
-      <slot name="contentScroll"></slot>
+    <div class="contents" grid>
+      <slot name="content"></slot>
     </div>
   </div>
 </template>
@@ -29,8 +29,9 @@ export default {
 }
 .title {
   background-color: rosybrown;
+  grid-gap: 5px;
 }
-.content {
+.contents {
   background-color: navajowhite;
   height: 100%;
   overflow-y: auto;

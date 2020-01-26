@@ -2,10 +2,10 @@
   <div class="sidemenu grid">
     <button @click="isCollapse=!isCollapse">Show</button>
 
-    <el-aside width="auto" >
+    <el-aside width="auto">
       <el-menu
         class="el-menu-vertical-demo"
-         default-active="1"
+        default-active="1"
         background-color="#545c64"
         text-color="#fff"
         active-text-color="#ffd04b"
@@ -33,13 +33,13 @@
         <el-divider></el-divider>
         <el-menu-item index="20">
           <i class="el-icon-menu"></i>
-          <span slot="title">Text</span>
+          <router-link tag="span" to="/" >Stiky</router-link>
         </el-menu-item>
-
         <el-menu-item index="30">
           <i class="el-icon-menu"></i>
-          <span slot="title">Text</span>
+          <router-link tag="span" to="/table" >NotStiky</router-link>
         </el-menu-item>
+
         <el-menu-item index="40">
           <i class="el-icon-menu"></i>
           <span slot="title">Text</span>
