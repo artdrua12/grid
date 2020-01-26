@@ -4,14 +4,11 @@
       <slot v-if="showTitle" name="titleTop"></slot>
       <slot v-if="showTitle" name="titleCenter"></slot>
       <slot v-if="showTitle" name="titleBottom"></slot>
-      <button @click="showTitle=!showTitle">Show Title</button>
+      <button class="button" @click="showTitle=!showTitle">Show Title</button>
     </div>
 
     <div class="content" grid>
       <slot name="contentScroll"></slot>
-      <div class="content_NotScroll">
-      <slot name="contentNotScroll" ></slot>
-      </div>
     </div>
   </div>
 </template>
@@ -27,23 +24,19 @@ export default {
 
 <style scoped>
 .vpage {
-  height: 100%;
+    height: 100vh;
   grid-template-rows: min-content 1fr;
 }
 .title {
   background-color: rosybrown;
-  position: sticky;
-  top: 0px;
 }
 .content {
   background-color: navajowhite;
-}
-div.content_NotScroll{
-  position:relative;
   height: 100%;
   overflow-y: auto;
 }
-button {
+
+.button {
   width: 200px;
   align-self: flex-end;
   justify-self: end;
