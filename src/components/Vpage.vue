@@ -4,14 +4,10 @@
       <slot v-if="showTitle" name="titleTop"></slot>
       <slot v-if="showTitle" name="titleCenter"></slot>
       <slot v-if="showTitle" name="titleBottom"></slot>
-      <button @click="showTitle=!showTitle">Show Title</button>
+      <button @click="showTitle=!showTitle" class="button">Show Title</button>
     </div>
-
-    <div class="content" grid>
-      <slot name="contentScroll"></slot>
-      <div class="content_NotScroll">
-      <slot name="contentNotScroll" ></slot>
-      </div>
+    <div class="contents" grid>
+      <slot name="content"></slot>
     </div>
   </div>
 </template>
@@ -35,15 +31,11 @@ export default {
   position: sticky;
   top: 0px;
 }
-.content {
+.contents {
   background-color: navajowhite;
 }
-div.content_NotScroll{
-  position:relative;
-  height: 100%;
-  overflow-y: auto;
-}
-button {
+
+.button {
   width: 200px;
   align-self: flex-end;
   justify-self: end;

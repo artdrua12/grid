@@ -24,7 +24,7 @@ export default {
 
 <style scoped>
 .vpage {
-    height: 100vh;
+  height: 100vh;
   grid-template-rows: min-content 1fr;
 }
 .title {
