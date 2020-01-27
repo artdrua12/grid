@@ -31,9 +31,11 @@ export default {
   position: sticky;
   top: 0px;
   grid-gap: 5px;
+  z-index: 2;
 }
 .contents {
   background-color: navajowhite;
+  overflow-y: auto;
 }
 
 .button {
