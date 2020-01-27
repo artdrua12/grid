@@ -1,5 +1,5 @@
 <template>
-  <vpage vpageheight="100vh">
+  <vpage vpageheight='100vh'>
     <template v-slot:titleTop>
       <div class="titleTop flex">
         <div class="block">Table</div>

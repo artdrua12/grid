@@ -1,9 +1,9 @@
 <template>
   <div class="vpage grid" :style="{'height': this.vpageheight}">
     <div class="title grid" :class="{'slide': !showTitle}">
-      <slot v-if="showTitle"  name="titleTop"></slot>
-      <slot v-if="showTitle"  name="titleCenter"></slot>
-      <slot v-if="showTitle"  name="titleBottom"></slot>
+      <slot v-if="showTitle" name="titleTop"></slot>
+      <slot v-if="showTitle" name="titleCenter"></slot>
+      <slot v-if="showTitle" name="titleBottom"></slot>
       <button @click="showTitle=!showTitle" class="button">Show Title</button>
     </div>
 
@@ -16,14 +16,14 @@
 export default {
   props: {
     vpageheight: {
-      default: '100%'
+      default: "100%"
     }
   },
   data() {
     return {
       showTitle: true
     };
-  },
+  }
 };
 </script>
 
@@ -33,10 +33,13 @@ div.vpage {
 }
 .title {
   background-color: rosybrown;
+  /* расстояние между блоками внутри title */
   grid-gap: 5px;
+
   position: sticky;
   top: 0px;
   z-index: 2;
+
   transition: all 0.5s;
 }
 .contents {
@@ -44,13 +47,11 @@ div.vpage {
   height: 100%;
   overflow-y: auto;
 }
-
 .button {
   position: absolute;
   right: 0px;
   bottom: -25px;
 }
-
 .slide {
   transform: translateY(-100%);
   height: 0px;
