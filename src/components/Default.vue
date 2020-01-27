@@ -1,7 +1,6 @@
 <template>
   <div class="globalDefaultWrapper grid">
     <side-menu class="sidebar" />
-
     <router-view></router-view>
   </div>
 </template>

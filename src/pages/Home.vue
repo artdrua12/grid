@@ -1,11 +1,6 @@
 <template>
   <vpage>
-    <template v-slot:titleTop>
-      <div class="titleTop flex">
-        <div class="block">Home</div>
-        <div class="block">Home two title</div>
-      </div>
-    </template>
+
     <template v-slot:titleCenter>
       <div class="titleCenter flex">
         <div v-for="i in 3" :key="i" class="block">center {{1}}</div>

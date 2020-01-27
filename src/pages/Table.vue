@@ -1,13 +1,19 @@
 <template>
-  <vpage vpageheight='100vh'>
+  <vpage vpageheight="100vh">
+    <template v-slot:titleTop>
+      <div class="titleTop flex">
+        <div class="block">Table</div>
+        <div class="block">Table two title</div>
+      </div>
+    </template>
     <template v-slot:titleCenter>
       <div class="titleCenter flex">
-        <div v-for="i in 3" :key="i" class="block">center {{1}}</div>
+        <div v-for="i in 3" :key="i" class="block">center {{i}}</div>
       </div>
     </template>
     <template v-slot:titleBottom>
       <div class="titleBottom flex">
-        <div v-for="i in 6" :key="i" class="block">botoom {{1}}</div>
+        <div v-for="i in 6" :key="i" class="block">botoom {{i}}</div>
       </div>
     </template>
     <template v-slot:content>
@@ -46,7 +52,7 @@ export default {
           name: "Tom",
           address: "No. 189, Grove St, Los Angeles"
         },
-                {
+        {
           date: "2016-05-03",
           name: "Tom",
           address: "No. 189, Grove St, Los Angeles"
@@ -66,7 +72,7 @@ export default {
           name: "Tom",
           address: "No. 189, Grove St, Los Angeles"
         },
-                {
+        {
           date: "2016-05-03",
           name: "Tom",
           address: "No. 189, Grove St, Los Angeles"
@@ -86,7 +92,7 @@ export default {
           name: "Tom",
           address: "No. 189, Grove St, Los Angeles"
         },
-                {
+        {
           date: "2016-05-03",
           name: "Tom",
           address: "No. 189, Grove St, Los Angeles"

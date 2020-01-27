@@ -1,9 +1,9 @@
 <template>
   <div class="vpage grid" :style="{'height': this.vpageheight}">
     <div class="title grid" :class="{'slide': !showTitle}">
-      <slot v-if="showTitle" class="tr" name="titleTop"></slot>
-      <slot v-if="showTitle" class="tr" name="titleCenter"></slot>
-      <slot v-if="showTitle" class="tr" name="titleBottom"></slot>
+      <slot v-if="showTitle"  name="titleTop"></slot>
+      <slot v-if="showTitle"  name="titleCenter"></slot>
+      <slot v-if="showTitle"  name="titleBottom"></slot>
       <button @click="showTitle=!showTitle" class="button">Show Title</button>
     </div>
 
@@ -50,9 +50,7 @@ div.vpage {
   right: 0px;
   bottom: -25px;
 }
-.tr {
-  transition: opacity 0.5s;
-}
+
 .slide {
   transform: translateY(-100%);
   height: 0px;
