@@ -1,5 +1,5 @@
 <template>
-  <vpage>
+  <vpage vpageheight='100vh'>
     <template v-slot:titleCenter>
       <div class="titleCenter flex">
         <div v-for="i in 3" :key="i" class="block">center {{1}}</div>
@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import Vpage from "../components/VpageNotSticky";
+import Vpage from "../components/Vpage";
 export default {
   data() {
     return {

@@ -14,6 +14,7 @@
 </template>
 <script>
 export default {
+
   data() {
     return {
       showTitle: true
@@ -47,7 +48,6 @@ export default {
   bottom: -25px;
 }
 .slide {
-  transition: all 0.5s;
   transform: translateY(-100%);
   height: 0px;
 }

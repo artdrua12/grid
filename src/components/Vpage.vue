@@ -1,5 +1,5 @@
 <template>
-  <div class="vpage grid">
+  <div class="vpage grid" :style="{'height': this.vpageheight}">
     <div class="title grid" :class="{'slide': !showTitle}">
       <slot v-if="showTitle" class="tr" name="titleTop"></slot>
       <slot v-if="showTitle" class="tr" name="titleCenter"></slot>
@@ -14,17 +14,21 @@
 </template>
 <script>
 export default {
+  props: {
+    vpageheight: {
+      default: '100%'
+    }
+  },
   data() {
     return {
       showTitle: true
     };
-  }
+  },
 };
 </script>
 
 <style scoped>
-.vpage {
-  height: 100%;
+div.vpage {
   grid-template-rows: min-content 1fr;
 }
 .title {
@@ -37,6 +41,7 @@ export default {
 }
 .contents {
   background-color: navajowhite;
+  height: 100%;
   overflow-y: auto;
 }
 
@@ -49,7 +54,6 @@ export default {
   transition: opacity 0.5s;
 }
 .slide {
-  transition: all 0.5s;
   transform: translateY(-100%);
   height: 0px;
 }
