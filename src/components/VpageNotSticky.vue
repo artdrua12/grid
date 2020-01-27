@@ -1,6 +1,6 @@
 <template>
   <div class="vpage grid">
-    <div class="title grid">
+    <div class="title grid" :class="{'slide': !showTitle}">
       <slot v-if="showTitle" name="titleTop"></slot>
       <slot v-if="showTitle" name="titleCenter"></slot>
       <slot v-if="showTitle" name="titleBottom"></slot>
@@ -30,7 +30,10 @@ export default {
 .title {
   background-color: rosybrown;
   grid-gap: 5px;
+  position: sticky;
+  top: 0px;
   z-index: 2;
+  transition: all 0.5s;
 }
 .contents {
   background-color: navajowhite;
@@ -39,8 +42,13 @@ export default {
 }
 
 .button {
-  width: 200px;
-  align-self: flex-end;
-  justify-self: end;
+  position: absolute;
+  right: 0px;
+  bottom: -25px;
+}
+.slide {
+  transition: all 0.5s;
+  transform: translateY(-100%);
+  height: 0px;
 }
 </style>
