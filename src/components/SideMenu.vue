@@ -42,7 +42,7 @@
 
         <el-menu-item index="40">
           <i class="el-icon-menu"></i>
-          <span slot="title">Text</span>
+          <router-link tag="span" to="/test" >Test</router-link>
         </el-menu-item>
       </el-menu>
     </el-aside>
