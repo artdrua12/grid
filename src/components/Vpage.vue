@@ -42,7 +42,7 @@ div.page {
   position: sticky;
   top: 0px;
   z-index: 2;
-  transition: all 0.5s;
+  transition: all 0.3s;
   padding: 10px;
 }
 .button {
@@ -52,6 +52,5 @@ div.page {
 }
 .slide {
   transform: translateY(-100%);
-  height: 0px;
 }
 </style>
