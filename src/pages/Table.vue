@@ -7,14 +7,15 @@
           <h1> Заголовок номер 2 </h1>
         </template>
         <template v-slot:page-tools>
-          
+            <button> ClickA</button>
+            <button> ClickB</button>
         </template>
       </PageMiddle>
     </template>
 
     <template v-slot:page__bottom>
-      <PageBottom slot:default>
-        <button v-for="i in 5" :key="i"> Click{{i}}</button>
+      <PageBottom nameA="Name from Parent" slot:default>
+        <h3 v-for="i in 5" :key="i"> Click{{i}}</h3>
       </PageBottom>
     </template>
 
