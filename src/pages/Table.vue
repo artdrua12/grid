@@ -1,27 +1,36 @@
 <template>
-  <vpage vpageheight='100vh'>
-    <template v-slot:titleTop>
-      <div class="titleTop flex">
-        <div class="block">Table</div>
-        <div class="block">Table two title</div>
-      </div>
-    </template>
-    <template v-slot:titleCenter>
+  <vpage vpageheight="100vh">
+    <template v-slot:page__top>
       <div class="titleCenter flex">
-        <div v-for="i in 3" :key="i" class="block">center {{i}}</div>
+        <div v-for="i in 3" :key="i" class="block">center {{1}}</div>
       </div>
     </template>
-    <template v-slot:titleBottom>
+
+    <template v-slot:page__middle>
+      <div class="titleCenter flex">
+        <div v-for="i in 3" :key="i" class="block">center {{1}}</div>
+      </div>
+    </template>
+
+    <template v-slot:page__bottom>
       <div class="titleBottom flex">
-        <div v-for="i in 6" :key="i" class="block">botoom {{i}}</div>
+        <div v-for="i in 5" :key="i" class="block">botoom {{1}}</div>
       </div>
     </template>
-    <template v-slot:content>
+
+    <template>
       <el-table :data="tableData" border style="width: 100%" height="100%">
         <el-table-column prop="date" label="Date" width="180"></el-table-column>
         <el-table-column prop="name" label="Name" width="180"></el-table-column>
         <el-table-column prop="address" label="Address"></el-table-column>
       </el-table>
+    </template>
+
+    <template v-slot:page-footer>
+      <div class="flex">
+        <h2>показать по</h2>
+        <h2>показать все</h2>
+      </div>
     </template>
   </vpage>
 </template>

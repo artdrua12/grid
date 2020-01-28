@@ -1,17 +1,19 @@
 <template>
-  <div class="vpage grid" :style="{'height': this.vpageheight}">
-    <div class="title grid" :class="{'slide': !showTitle}">
-      <slot v-if="showTitle" name="titleTop"></slot>
-      <slot v-if="showTitle" name="titleCenter"></slot>
-      <slot v-if="showTitle" name="titleBottom"></slot>
+  <div class="page" :style="{'height': this.vpageheight}">
+
+    <div class="page__bar" :class="{'slide': !showTitle}">
+      <slot v-if="showTitle" name="page__top"></slot>
+      <slot v-if="showTitle" name="page__middle"></slot>
+      <slot v-if="showTitle" name="page__bottom"></slot>
       <button @click="showTitle=!showTitle" class="button">Show Title</button>
     </div>
 
-    <div class="contents" grid>
-      <slot name="content"></slot>
-    </div>
+    <slot></slot>
+
+    <slot name="page-footer"></slot>
   </div>
 </template>
+
 <script>
 export default {
   props: {
@@ -28,22 +30,21 @@ export default {
 </script>
 
 <style scoped>
-div.vpage {
-  grid-template-rows: min-content 1fr;
+div.page {
+  display: grid;
+  grid-template-rows: min-content 1fr min-content;
 }
-.title {
-  background-color: rosybrown;
-  /* расстояние между блоками внутри title */
+.page__bar {
+  background-color:  rgba(221, 209, 35, 0.7);
+  display: grid;
   grid-gap: 5px;
-
   position: sticky;
   top: 0px;
   z-index: 2;
-
   transition: all 0.5s;
+  padding: 10px;
 }
 .contents {
-  background-color: navajowhite;
   height: 100%;
   overflow-y: auto;
 }

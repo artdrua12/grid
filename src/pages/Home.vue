@@ -1,25 +1,31 @@
 <template>
   <vpage>
+    <template v-slot:page__top>
+      <div class="titleTop flex">
+        <div v-for="i in 3" :key="i" class="block">center {{i}}</div>
+      </div>
+    </template>
 
-    <template v-slot:titleCenter>
+    <template v-slot:page__middle>
       <div class="titleCenter flex">
-        <div v-for="i in 3" :key="i" class="block">center {{1}}</div>
+        <div v-for="i in 3" :key="i" class="block">center {{i}}</div>
       </div>
     </template>
-    <template v-slot:titleBottom>
+
+    <template v-slot:page__bottom>
       <div class="titleBottom flex">
-        <div v-for="i in 5" :key="i" class="block">botoom {{1}}</div>
+        <div v-for="i in 5" :key="i" class="block">botoom {{i}}</div>
       </div>
     </template>
-    <template v-slot:content>
-      
+
+    <template>
       <el-table :data="tableData" border style="width: 100%">
         <el-table-column prop="date" label="Date" width="180"></el-table-column>
         <el-table-column prop="name" label="Name" width="180"></el-table-column>
         <el-table-column prop="address" label="Address"></el-table-column>
       </el-table>
-     
     </template>
+
   </vpage>
 </template>
 
@@ -127,7 +133,5 @@ export default {
   height: 70px;
   padding: 3px 20px;
 }
-.tableElement{
-  width: 100%;
-}
+
 </style>
