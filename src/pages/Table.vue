@@ -2,20 +2,29 @@
   <vpage vpageheight="100vh">
 
     <template v-slot:page__middle>
-      <PageMiddle>
-        <template v-slot:page-title>
-          <h1> Заголовок номер 2 </h1>
-        </template>
-        <template v-slot:page-tools>
-            <button> ClickA</button>
-            <button> ClickB</button>
-        </template>
+      <PageMiddle title="Заголовок от Table" count="10" v-slot:default>
+        <div class="page-control__group" v-for="i in 3" :key="i">
+          <button>
+            <img
+              width="30px"
+              src="https://www.pinclipart.com/picdir/big/11-114024_videos-to-business-personal-information-icon-png-clipart.png"
+            />
+            <span>text</span>
+          </button>
+          <button>
+            <img
+              width="30px"
+              src="https://www.pinclipart.com/picdir/big/11-114024_videos-to-business-personal-information-icon-png-clipart.png"
+            />
+            <span>text</span>
+          </button>
+        </div>
       </PageMiddle>
     </template>
 
     <template v-slot:page__bottom>
-      <PageBottom nameA="Name from Parent" slot:default>
-        <h3 v-for="i in 5" :key="i"> Click{{i}}</h3>
+      <PageBottom v-slot:default>
+        <button v-for="i in 4" :key="i">Click{{i}}</button>
       </PageBottom>
     </template>
 

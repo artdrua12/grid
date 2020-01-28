@@ -16,7 +16,7 @@ export default {
 }
 .page__top div{
     display: flex;
-    border: 2px solid red;
+    border: 2px solid #dadec0;
     padding: 12px;
     margin-right: 10px;
 }

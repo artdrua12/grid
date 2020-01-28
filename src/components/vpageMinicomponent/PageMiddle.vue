@@ -1,32 +1,51 @@
 <template>
   <div class="page__middle">
-    <div class="page__title">
-      <slot name="page-title"></slot>
-    </div>
-
-    <div class="page__tools">
-      <slot name="page-tools"></slot>
+    <h1>{{this.title}}</h1>
+    <div class="page__pagination">Показано X из {{this.count}}</div>
+    <div class="page-control">
+      <slot></slot>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    title: {
+      type: String,
+      default: ""
+    },
+    count: {
+      require: true
+    }
+  }
+};
 </script>
 
 <style scoped>
 .page__middle {
   display: flex;
+  align-items: center;
 }
-.page__title {
-    margin-right: auto
+.page__pagination {
+  margin-left: auto;
+  margin-right: 10px;
 }
-.page__tools{
-    display: flex;
+.page-control{
+  display: flex;
 }
-.page__tools div{
-  border: 2px dotted rgb(52, 13, 221);
-  padding: 12px;
-  margin-right: 7px;
+.page-control__group{
+  display: flex;
+  padding: 15px;
+  border-left: 2px solid #dadec0;
+}
+button{
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 16px;
+  padding: 10px;
+  background-color: rgba(235, 241, 234, 0.7);
 }
 </style>
