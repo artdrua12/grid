@@ -1,36 +1,41 @@
 <template>
   <vpage>
     <template v-slot:page__top>
-      <div class="titleTop flex">
-        <div v-for="i in 3" :key="i" class="block">center {{i}}</div>
-      </div>
+      <PageTop slot:default>
+        <div v-for="i in 3" :key="i">center {{i}}</div>
+      </PageTop>
     </template>
 
     <template v-slot:page__middle>
-      <div class="titleCenter flex">
-        <div v-for="i in 3" :key="i" class="block">center {{i}}</div>
-      </div>
+      <PageMiddle>
+        <template v-slot:page-title>
+          <h1> Заголовок </h1>
+        </template>
+        <template v-slot:page-tools>
+          <div v-for="i in 3" :key="i">middle {{i}}</div>
+        </template>
+      </PageMiddle>
     </template>
 
     <template v-slot:page__bottom>
-      <div class="titleBottom flex">
-        <div v-for="i in 5" :key="i" class="block">botoom {{i}}</div>
-      </div>
+      <PageBottom slot:default>
+        <button v-for="i in 3" :key="i"> Click{{i}}</button>
+      </PageBottom>
     </template>
 
-    <template>
-      <el-table :data="tableData" border style="width: 100%">
-        <el-table-column prop="date" label="Date" width="180"></el-table-column>
-        <el-table-column prop="name" label="Name" width="180"></el-table-column>
-        <el-table-column prop="address" label="Address"></el-table-column>
-      </el-table>
-    </template>
-
+    <el-table :data="tableData" border style="width: 100%">
+      <el-table-column prop="date" label="Date" width="180"></el-table-column>
+      <el-table-column prop="name" label="Name" width="180"></el-table-column>
+      <el-table-column prop="address" label="Address"></el-table-column>
+    </el-table>
   </vpage>
 </template>
 
 <script>
 import Vpage from "../components/Vpage";
+import PageTop from "../components/vpageMinicomponent/PageTop";
+import PageMiddle from "../components/vpageMinicomponent/PageMiddle";
+import PageBottom from "../components/vpageMinicomponent/PageBottom";
 export default {
   data() {
     return {
@@ -119,19 +124,13 @@ export default {
     };
   },
   components: {
-    Vpage
+    Vpage,
+    PageTop,
+    PageMiddle,
+    PageBottom
   }
 };
 </script>
 
 <style scoped>
-.titleCenter div:nth-child(1) {
-  margin-right: auto;
-}
-.block {
-  border: 1px solid;
-  height: 70px;
-  padding: 3px 20px;
-}
-
 </style>

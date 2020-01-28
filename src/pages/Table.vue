@@ -1,42 +1,43 @@
 <template>
   <vpage vpageheight="100vh">
-    <template v-slot:page__top>
-      <div class="titleCenter flex">
-        <div v-for="i in 3" :key="i" class="block">center {{1}}</div>
-      </div>
-    </template>
 
     <template v-slot:page__middle>
-      <div class="titleCenter flex">
-        <div v-for="i in 3" :key="i" class="block">center {{1}}</div>
-      </div>
+      <PageMiddle>
+        <template v-slot:page-title>
+          <h1> Заголовок номер 2 </h1>
+        </template>
+        <template v-slot:page-tools>
+          
+        </template>
+      </PageMiddle>
     </template>
 
     <template v-slot:page__bottom>
-      <div class="titleBottom flex">
-        <div v-for="i in 5" :key="i" class="block">botoom {{1}}</div>
-      </div>
+      <PageBottom slot:default>
+        <button v-for="i in 5" :key="i"> Click{{i}}</button>
+      </PageBottom>
     </template>
 
-    <template>
+
       <el-table :data="tableData" border style="width: 100%" height="100%">
         <el-table-column prop="date" label="Date" width="180"></el-table-column>
         <el-table-column prop="name" label="Name" width="180"></el-table-column>
         <el-table-column prop="address" label="Address"></el-table-column>
       </el-table>
-    </template>
 
     <template v-slot:page-footer>
-      <div class="flex">
-        <h2>показать по</h2>
-        <h2>показать все</h2>
-      </div>
+      <PageFooter slot:default>
+        <button v-for="i in 2" :key="i"> Click{{i}}</button>
+      </PageFooter>
     </template>
   </vpage>
 </template>
 
 <script>
 import Vpage from "../components/Vpage";
+import PageMiddle from "../components/vpageMinicomponent/PageMiddle";
+import PageBottom from "../components/vpageMinicomponent/PageBottom";
+import PageFooter from "../components/vpageMinicomponent/PageFooter";
 export default {
   data() {
     return {
@@ -125,18 +126,12 @@ export default {
     };
   },
   components: {
-    Vpage
+    Vpage,
+    PageMiddle,
+    PageBottom,
+    PageFooter
   }
 };
 </script>
 
-<style scoped>
-.titleCenter div:nth-child(1) {
-  margin-right: auto;
-}
-.block {
-  border: 1px solid;
-  height: 70px;
-  padding: 3px 20px;
-}
-</style>
+<style scoped></style>

@@ -85,7 +85,7 @@ export default {
 <style scoped>
 .sidemenu {
   height: 100vh;
-  grid-template-rows: 20px 1fr;
+  grid-template-rows: min-content 1fr;
   /* background-color: #545c64; */
 }
 

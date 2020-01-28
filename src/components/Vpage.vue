@@ -15,6 +15,7 @@
 </template>
 
 <script>
+
 export default {
   props: {
     vpageheight: {
@@ -35,7 +36,7 @@ div.page {
   grid-template-rows: min-content 1fr min-content;
 }
 .page__bar {
-  background-color:  rgba(221, 209, 35, 0.7);
+  background-color: rgba(221, 209, 35, 0.7);
   display: grid;
   grid-gap: 5px;
   position: sticky;
@@ -44,10 +45,6 @@ div.page {
   transition: all 0.5s;
   padding: 10px;
 }
-.contents {
-  height: 100%;
-  overflow-y: auto;
-}
 .button {
   position: absolute;
   right: 0px;
@@ -55,6 +52,5 @@ div.page {
 }
 .slide {
   transform: translateY(-100%);
-  height: 0px;
 }
 </style>
