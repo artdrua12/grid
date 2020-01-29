@@ -36,7 +36,7 @@ div.app {
 
 .slide {
   grid-area: 1/1/2/2;
-  width: 42px;
+  width: 50px;
   z-index: 2;
   transition: width 0.5s ease-in-out;
 }
