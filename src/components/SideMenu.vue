@@ -11,7 +11,7 @@
         active-text-color="#ffd04b"
         :collapse="isCollapse"
       >
-        <el-menu-item index="10">
+        <el-menu-item index="1">
           <i class="el-icon-menu"></i>
           <span slot="title">Investigtions</span>
         </el-menu-item>
@@ -31,19 +31,21 @@
         </el-submenu>
 
         <el-divider></el-divider>
-        <el-menu-item index="20">
-          <i class="el-icon-menu"></i>
-          <router-link tag="span" to="/" >Stiky</router-link>
-        </el-menu-item>
-        <el-menu-item index="30">
-          <i class="el-icon-menu"></i>
-          <router-link tag="span" to="/table" >NotStiky</router-link>
-        </el-menu-item>
 
-        <el-menu-item index="40">
+        <router-link tag="el-menu-item" index="2" to="/">
           <i class="el-icon-menu"></i>
-          <router-link tag="span" to="/test" >Test</router-link>
-        </el-menu-item>
+          <span>Home</span>
+        </router-link>
+
+        <router-link tag="el-menu-item" index="3" to="/table">
+          <i class="el-icon-menu"></i>
+          <span>Table</span>
+        </router-link>
+
+        <router-link tag="el-menu-item" index="4" to="/test">
+          <i class="el-icon-menu"></i>
+          <span>Test</span>
+        </router-link>
       </el-menu>
     </el-aside>
   </div>
