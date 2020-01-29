@@ -18,7 +18,8 @@
 
         <el-divider></el-divider>
 
-        <el-submenu v-for="(item,index) in dataMenu" :key="index" :index="`${index}`">
+        
+        <el-submenu v-for="(item,index) in dataMenu" :key="index" :index="`${index}`" scroll>
           <template slot="title">
             <i :class="item.icon"></i>
             <span slot="title">{{item.title}}</span>
@@ -55,7 +56,7 @@
 export default {
   data() {
     return {
-      isCollapse: true,
+      isCollapse: false,
       dataMenu: [
         {
           icon: "el-icon-location",

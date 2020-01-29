@@ -1,10 +1,7 @@
 <template>
   <div class="globalDefaultWrapper grid">
     <side-menu class="sidebar" />
-    <div class="router" :class="{'slide': !isCollapse}">
-      <button @click="isCollapse=!isCollapse">Show2</button>
-      <router-view></router-view>
-    </div>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -31,13 +28,4 @@ export default {
   position: sticky;
   top: 0px;
 }
-.router {
-  width: 100%;
-  transition: 0.3s all ease-in-out;
-}
-.slide {
-  transform: translateX(-255px);
-  width: calc(100% + 255px);
-}
-
 </style>
