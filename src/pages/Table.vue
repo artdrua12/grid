@@ -1,5 +1,5 @@
 <template>
-  <vpage vpageheight="100vh">
+  <vpage vpageheight="calc(100vh - 22px)">
 
     <template v-slot:page__middle>
       <PageMiddle title="Заголовок от Table" count="10" v-slot:default>
